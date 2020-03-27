@@ -1,9 +1,9 @@
-cmd_insert#:#Video aus ViMP einfügen
-edit_ex_el#:#Video aus ViMP bearbeiten
+cmd_insert#:#Video einfügen
+edit_ex_el#:#Video bearbeiten
 width#:#Breite
 height#:#Höhe
 keep_aspect_ratio#:#Seitenverhältnis beibehalten
-choose_video#:#Suchen Sie mit Hilfe der Filter nach Videos in ViMP, um diese hinzuzufügen.
+choose_video#:#Suchen Sie mit Hilfe der Filter nach Videos, um diese hinzuzufügen.
 msg_please_enter_filter#:#Bitte schränken Sie die Suche mithilfe der verfügbaren Filter ein.
 subtab_search#:#Suchen
 subtab_own_videos#:#Eigene Videos

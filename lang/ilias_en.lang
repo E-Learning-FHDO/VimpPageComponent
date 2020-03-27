@@ -1,5 +1,5 @@
-cmd_insert#:#Insert Video from ViMP
-edit_ex_el#:#Edit Video from ViMP
+cmd_insert#:#Insert Video
+edit_ex_el#:#Edit Video
 width#:#Width
 height#:#Height
 keep_aspect_ratio#:#Keep aspect ratio
