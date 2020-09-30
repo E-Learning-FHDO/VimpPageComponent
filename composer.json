@@ -26,11 +26,12 @@
   "autoload": {
     "classmap": [
       "./classes/",
-      "./src/",
-      "../../../Repository/RepositoryObject/ViMP",
-      "../../../../../../../Services/COPage",
-      "../../../../../../../Services/MediaObjects/classes/class.ilWidthHeightInputGUI.php"
+      "./src/"
+    ],
+    "files": [
+      "../../../Repository/RepositoryObject/ViMP/vendor/autoload.php"
     ]
+
   },
   "config": {
     "optimize-autoloader": true,
@@ -38,6 +39,9 @@
     "classmap-authoritative": true
   },
   "scripts": {
-    "pre-autoload-dump": "srag\\LibrariesNamespaceChanger\\LibrariesNamespaceChanger::rewriteLibrariesNamespaces"
+    "pre-autoload-dump": [
+      "srag\\LibrariesNamespaceChanger\\LibrariesNamespaceChanger::rewriteLibrariesNamespaces",
+      "srag\\LibrariesNamespaceChanger\\PHP72Backport::PHP72Backport"
+    ]
   }
 }

@@ -3,7 +3,7 @@ edit_ex_el#:#Edit Video
 width#:#Width
 height#:#Height
 keep_aspect_ratio#:#Keep aspect ratio
-choose_video#:#Please choose a video from the tree below:
+choose_video#:#Please choose a video from the table below:
 msg_please_enter_filter#:#Please limit the search with the available filters.
 subtab_search#:#Search
 subtab_own_videos#:#Own Videos

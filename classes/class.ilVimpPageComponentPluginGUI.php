@@ -170,20 +170,19 @@ class ilVimpPageComponentPluginGUI extends ilPageComponentPluginGUI {
 		}
         $table_gui->setFilterCommand(self::CMD_INSERT);
         $table_gui->parseData();
-		$this->tpl->setContent($table_gui->getHTML() . xvmpGUI::getModalPlayer()->getHTML());
+		$this->tpl->setContent($table_gui->getHTML());
 	}
 
 	/**
 	 *
 	 */
 	protected function showFiltered() {
-		xvmpVideoPlayer::loadVideoJSAndCSS(false);
 		$this->setSubTabs(self::SUBTAB_SEARCH);
 		$table_gui = new vpcoSearchVideosTableGUI($this, self::CMD_INSERT);
 		$table_gui->setFilterCommand(self::CMD_INSERT);
 		$table_gui->parseData();
 		$table_gui->determineOffsetAndOrder();
-		$this->tpl->setContent($table_gui->getHTML() . xvmpGUI::getModalPlayer()->getHTML());
+		$this->tpl->setContent($table_gui->getHTML());
 	}
 
 
@@ -233,7 +232,7 @@ class ilVimpPageComponentPluginGUI extends ilPageComponentPluginGUI {
 		$table_gui->setFilterCommand(self::CMD_INSERT);
 		$table_gui->parseData();
 		$table_gui->determineOffsetAndOrder();
-		$this->tpl->setContent($table_gui->getHTML() . xvmpGUI::getModalPlayer()->getHTML());
+		$this->tpl->setContent($table_gui->getHTML());
 	}
 
 	/**
@@ -260,12 +259,11 @@ class ilVimpPageComponentPluginGUI extends ilPageComponentPluginGUI {
 	 *
 	 */
 	protected function showFilteredOwnVideos() {
-		xvmpVideoPlayer::loadVideoJSAndCSS(false);
 		$this->setSubTabs(self::SUBTAB_OWN_VIDEOS);
 		$table_gui = new vpcoOwnVideosTableGUI($this, self::CMD_INSERT, self::CMD_SHOW_FILTERED_OWN_VIDEOS);
 		$table_gui->setFilterCommand(self::CMD_INSERT);
 		$table_gui->parseData();
-		$this->tpl->setContent($table_gui->getHTML() . xvmpGUI::getModalPlayer()->getHTML());
+		$this->tpl->setContent($table_gui->getHTML());
 	}
 
 	/**
@@ -495,20 +493,20 @@ class ilVimpPageComponentPluginGUI extends ilPageComponentPluginGUI {
 	public function getElementHTML($a_mode, array $a_properties, $a_plugin_version) {
 		try {
 			$video = xvmpMedium::find($a_properties['mid']);
-		} catch (xvmpException $e) {
+
+		xvmpVideoPlayer::loadVideoJSAndCSS(false);
+		$video_player = new xvmpVideoPlayer($video, xvmpConf::getConfig(xvmpConf::F_EMBED_PLAYER) || xvmpMedium::isVimeoOrYoutube($video));
+		$video_player->setOption('height', $a_properties['height'] . 'px');
+		$video_player->setOption('width', $a_properties['width'] . 'px');
+		return $video_player->getHTML();
+        } catch (xvmpException $e) {
 //			ilUtil::sendInfo($e->getMessage());
 			return '<img 
 				src="' . ilViMPPlugin::getInstance()->getImagePath('not_available.png') . '" 
 				height="' . $a_properties['height'] . '" 
 				width="' . $a_properties['width'] . '"
 			>';
-		}
-
-		xvmpVideoPlayer::loadVideoJSAndCSS(false);
-		$video_player = new xvmpVideoPlayer($video, xvmpConf::getConfig(xvmpConf::F_EMBED_PLAYER));
-		$video_player->setOption('height', $a_properties['height'] . 'px');
-		$video_player->setOption('width', $a_properties['width'] . 'px');
-		return $video_player->getHTML();
+        }
 	}
 
 

@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.4.1]
+- Fix crash and not show "not available thumbnail" if video is deleted from VIMP server
+
+## [1.4.0]
+- ILIAS 6 support
+- Remove ILIAS 5.2 support
+- Remove ILIAS 5.3 support
+
+## [1.3.1]
+- Fix YouTube player
+
+## [1.3.0]
+- feature: introduced tables for usage in InteractiveVideo plugin
+
 ## [1.2.1]
 - bugfix: edit settings after selection didn't work
 - improvement: smaller changes in edit form styling
