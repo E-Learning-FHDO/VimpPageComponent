@@ -1,5 +1,8 @@
 # Changelog
 
+## [1.5.0]
+- compatability with plugin version 1.6.0
+
 ## [1.4.1]
 - Fix crash and not show "not available thumbnail" if video is deleted from VIMP server
 

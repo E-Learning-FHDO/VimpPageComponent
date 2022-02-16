@@ -1,5 +1,6 @@
 <?php
 
+use srag\Plugins\ViMP\UIComponents\Player\VideoPlayer;
 use srag\Plugins\VimpPageComponent\Config\Config;
 
 require_once __DIR__ . '/../vendor/autoload.php';
@@ -494,8 +495,8 @@ class ilVimpPageComponentPluginGUI extends ilPageComponentPluginGUI {
 		try {
 			$video = xvmpMedium::find($a_properties['mid']);
 
-		xvmpVideoPlayer::loadVideoJSAndCSS(false);
-		$video_player = new xvmpVideoPlayer($video, xvmpConf::getConfig(xvmpConf::F_EMBED_PLAYER) || xvmpMedium::isVimeoOrYoutube($video));
+		VideoPlayer::loadVideoJSAndCSS(false);
+		$video_player = new VideoPlayer($video, xvmpConf::getConfig(xvmpConf::F_EMBED_PLAYER) || xvmpMedium::isVimeoOrYoutube($video));
 		$video_player->setOption('height', $a_properties['height'] . 'px');
 		$video_player->setOption('width', $a_properties['width'] . 'px');
 		return $video_player->getHTML();

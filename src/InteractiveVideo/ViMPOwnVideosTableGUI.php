@@ -1,9 +1,9 @@
 <?php
 namespace srag\Plugins\VimpPageComponent\InteractiveVideo;
 
+use srag\Plugins\ViMP\UIComponents\Player\VideoPlayer;
 use vpcoOwnVideosTableGUI;
 use xvmpTableGUI;
-use xvmpVideoPlayer;
 use ilObjPluginDispatchGUI;
 use ilObjViMPGUI;
 use xvmpOwnVideosGUI;
@@ -47,7 +47,7 @@ class ViMPOwnVideosTableGUI extends vpcoOwnVideosTableGUI
         $this->tpl_global->addOnLoadCode('xoctWaiter.init("waiter");');
         $base_link = $this->ctrl->getLinkTarget($this->parent_obj,'', '', true);
         $this->tpl_global->addOnLoadCode('VimpSearch.base_link = "'.$base_link.'";');
-        xvmpVideoPlayer::loadVideoJSAndCSS(false);
+        VideoPlayer::loadVideoJSAndCSS(false);
 
         $base_link = $this->ctrl->getLinkTargetByClass(array(ilObjPluginDispatchGUI::class, ilObjViMPGUI::class, xvmpOwnVideosGUI::class),'', '', true);
         $this->tpl_global->addOnLoadCode('VimpContent.ajax_base_url = "'.$base_link.'";');

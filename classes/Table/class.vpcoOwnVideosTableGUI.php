@@ -1,6 +1,8 @@
 <?php
 /* Copyright (c) 1998-2009 ILIAS open source, Extended GPL, see docs/LICENSE */
 
+use srag\Plugins\ViMP\UIComponents\Player\VideoPlayer;
+
 /**
  * Class vpcoOwnVideosTableGUI
  *
@@ -43,7 +45,7 @@ class vpcoOwnVideosTableGUI extends xvmpOwnVideosTableGUI {
      */
 	public function __construct($parent_gui, $parent_cmd, $vpco_cmd = '') {
 		parent::__construct($parent_gui, $vpco_cmd == ilVimpPageComponentPluginGUI::CMD_SHOW_FILTERED_OWN_VIDEOS ? xvmpOwnVideosGUI::CMD_SHOW_FILTERED : $parent_cmd);
-        xvmpVideoPlayer::loadVideoJSAndCSS(false);
+        VideoPlayer::loadVideoJSAndCSS(false);
 
 		$base_link = $this->ctrl->getLinkTargetByClass(array(ilObjPluginDispatchGUI::class, ilObjViMPGUI::class, xvmpOwnVideosGUI::class),'', '', true);
 		$this->tpl_global->addOnLoadCode('VimpContent.ajax_base_url = "'.$base_link.'";');
