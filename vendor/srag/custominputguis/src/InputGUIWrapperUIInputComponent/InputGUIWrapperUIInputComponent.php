@@ -1,6 +1,6 @@
 <?php
 
-namespace srag\CustomInputGUIs\VimpPageComponent\InputGUIWrapperUIInputComponent;
+namespace srag\CustomInputGUIs\InputGUIWrapperUIInputComponent;
 
 use Closure;
 use ilCheckboxInputGUI;
@@ -11,13 +11,13 @@ use ILIAS\UI\Implementation\Component\Input\Field\Input;
 use ILIAS\UI\Implementation\Component\Input\NameSource;
 use ILIAS\Validation\Factory as ValidationFactory;
 use ilRepositorySelector2InputGUI;
-use srag\CustomInputGUIs\VimpPageComponent\PropertyFormGUI\Items\Items;
-use srag\DIC\VimpPageComponent\DICTrait;
+use srag\CustomInputGUIs\PropertyFormGUI\Items\Items;
+use srag\DIC\DICTrait;
 
 /**
  * Class InputGUIWrapperUIInputComponent
  *
- * @package srag\CustomInputGUIs\VimpPageComponent\InputGUIWrapperUIInputComponent
+ * @package srag\CustomInputGUIs\InputGUIWrapperUIInputComponent
  *
  * @author  studer + raimann ag - Team Custom 1 <support-custom1@studer-raimann.ch>
  */

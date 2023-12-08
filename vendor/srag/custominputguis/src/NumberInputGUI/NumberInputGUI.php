@@ -1,16 +1,16 @@
 <?php
 
-namespace srag\CustomInputGUIs\VimpPageComponent\NumberInputGUI;
+namespace srag\CustomInputGUIs\NumberInputGUI;
 
 use ilNumberInputGUI;
 use ilTableFilterItem;
 use ilToolbarItem;
-use srag\DIC\VimpPageComponent\DICTrait;
+use srag\DIC\DICTrait;
 
 /**
  * Class NumberInputGUI
  *
- * @package srag\CustomInputGUIs\VimpPageComponent\NumberInputGUI
+ * @package srag\CustomInputGUIs\NumberInputGUI
  *
  * @author  studer + raimann ag - Team Custom 1 <support-custom1@studer-raimann.ch>
  */

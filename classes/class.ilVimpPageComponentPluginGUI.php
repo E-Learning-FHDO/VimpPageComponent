@@ -1,5 +1,8 @@
 <?php
 
+declare(strict_types=1);
+
+use ILIAS\DI\Container;
 use srag\Plugins\ViMP\UIComponents\Player\VideoPlayer;
 use srag\Plugins\VimpPageComponent\Config\Config;
 
@@ -31,7 +34,7 @@ class ilVimpPageComponentPluginGUI extends ilPageComponentPluginGUI {
     /**
 	 * @var ilCtrl
 	 */
-	protected $ctrl;
+	protected ilCtrl $ctrl;
 	/**
 	 * @var ilTemplate
 	 */
@@ -43,26 +46,34 @@ class ilVimpPageComponentPluginGUI extends ilPageComponentPluginGUI {
 	/**
 	 * @var ilVimpPageComponentPlugin
 	 */
-	protected $pl;
+	protected ilVimpPageComponentPlugin $pl;
+    /**
+     * @var Container|mixed
+     */
+    private $dic;
 
 
-	/**
+    /**
 	 * ilVimpPageComponentPluginGUI constructor.
 	 */
 	public function __construct() {
-		global $ilCtrl, $tpl, $ilTabs, $lng;
+		global $DIC, $ilCtrl, $tpl, $ilTabs, $lng;
+        $this->db = $DIC->database();
+        $this->dic = $DIC;
 		$this->ctrl = $ilCtrl;
 		$this->tpl = $tpl;
 		$this->tabs = $ilTabs;
 		$this->lng = $lng;
-		$this->pl = new ilVimpPageComponentPlugin();
+		$this->pl = new ilVimpPageComponentPlugin($this->db, $DIC["component.repository"], "vpco");
 	}
 
 
-	/**
-	 *
-	 */
-	public function executeCommand() {
+    /**
+     *
+     * @throws ilCtrlException
+     */
+	public function executeCommand(): void
+    {
 		try {
 			$next_class = $this->ctrl->getNextClass();
 			$cmd = $this->ctrl->getCmd();
@@ -71,16 +82,14 @@ class ilVimpPageComponentPluginGUI extends ilPageComponentPluginGUI {
 				default:
 					if ($cmd == self::CMD_INSERT && $_GET['vpco_cmd']) {
 						$cmd = $_GET['vpco_cmd'];
-						$this->performCommand($cmd);
-						break;
-					} else {
+                    } else {
 						$cmd = $this->ctrl->getCmd();
-						$this->performCommand($cmd);
-						break;
-					}
-			}
+                    }
+                    $this->performCommand($cmd);
+                    break;
+            }
 		} catch (xvmpException $e) {
-			ilUtil::sendFailure($e->getMessage(), true);
+            $this->dic->ui()->mainTemplate()->setOnScreenMessage('failure', $e->getMessage());
 			$this->ctrl->returnToParent($this);
 		}
 	}
@@ -120,20 +129,23 @@ class ilVimpPageComponentPluginGUI extends ilPageComponentPluginGUI {
 		}
 	}
 
-	/**
-	 * @param $cmd
-	 */
+    /**
+     * @param $cmd
+     * @throws ilCtrlException
+     * @throws JsonException
+     */
 	public function redirect($cmd) {
 		$this->ctrl->setParameter($this, 'vpco_cmd', $cmd);
 		$this->ctrl->redirect($this, self::CMD_INSERT);
 	}
 
 
-	/**
-	 * @param $cmd
-	 *
-	 * @return string
-	 */
+    /**
+     * @param $cmd
+     *
+     * @return string
+     * @throws ilCtrlException
+     */
 	public function getLinkTarget($cmd) {
 		$this->ctrl->setParameter($this, 'vpco_cmd', $cmd);
 		return $this->ctrl->getLinkTarget($this, self::CMD_INSERT);
@@ -143,13 +155,14 @@ class ilVimpPageComponentPluginGUI extends ilPageComponentPluginGUI {
 	/**
 	 *
 	 */
-	public function insert() {
+	public function insert(): void
+    {
 		$this->setSubTabs(self::SUBTAB_SEARCH);
-		ilUtil::sendInfo($this->getPlugin()->txt('choose_video'));
+        $this->dic->ui()->mainTemplate()->setOnScreenMessage('info', $this->pl->txt('choose_video'));
 		try {
 			$table_gui = new vpcoSearchVideosTableGUI($this, self::CMD_INSERT);
 		} catch (xvmpException $e) {
-			ilUtil::sendFailure($e->getMessage(), true);
+            $this->dic->ui()->mainTemplate()->setOnScreenMessage('failure', $e->getMessage());
 			$this->ctrl->returnToParent($this);
 		}
         $table_gui->setFilterCommand(self::CMD_INSERT);
@@ -162,11 +175,11 @@ class ilVimpPageComponentPluginGUI extends ilPageComponentPluginGUI {
 	 */
 	public function show() {
 		$this->setSubTabs(self::SUBTAB_SEARCH);
-		ilUtil::sendInfo($this->getPlugin()->txt('choose_video'));
+        $this->dic->ui()->mainTemplate()->setOnScreenMessage('info', $this->pl->txt('choose_video'));
 		try {
 			$table_gui = new vpcoSearchVideosTableGUI($this, self::CMD_INSERT);
 		} catch (xvmpException $e) {
-			ilUtil::sendFailure($e->getMessage(), true);
+            $this->dic->ui()->mainTemplate()->setOnScreenMessage('failure', $e->getMessage());
 			$this->ctrl->returnToParent($this);
 		}
         $table_gui->setFilterCommand(self::CMD_INSERT);
@@ -200,9 +213,10 @@ class ilVimpPageComponentPluginGUI extends ilPageComponentPluginGUI {
 	}
 
 
-	/**
-	 *
-	 */
+    /**
+     *
+     * @throws ilException
+     */
 	public function resetFilter() {
 		$table_gui = new xvmpSearchVideosTableGUI($this, self::CMD_INSERT);
 		$table_gui->resetOffset();
@@ -216,7 +230,7 @@ class ilVimpPageComponentPluginGUI extends ilPageComponentPluginGUI {
 	 */
 	public function indexOwnVideos() {
 		$this->setSubTabs(self::SUBTAB_OWN_VIDEOS);
-		ilUtil::sendInfo($this->getPlugin()->txt('choose_video'), true);
+        $this->dic->ui()->mainTemplate()->setOnScreenMessage('info', $this->pl->txt('choose_video'));
 		$table_gui = new vpcoOwnVideosTableGUI($this, self::CMD_INSERT);
 		$table_gui->setFilterCommand(self::CMD_INSERT);
 		$this->tpl->setContent($table_gui->getHTML());
@@ -228,7 +242,7 @@ class ilVimpPageComponentPluginGUI extends ilPageComponentPluginGUI {
 	 */
 	public function showOwnVideos() {
 		$this->setSubTabs(self::SUBTAB_OWN_VIDEOS);
-		ilUtil::sendInfo($this->getPlugin()->txt('choose_video'), true);
+        $this->dic->ui()->mainTemplate()->setOnScreenMessage('info', $this->pl->txt('choose_video'));
 		$table_gui = new vpcoOwnVideosTableGUI($this, self::CMD_INSERT);
 		$table_gui->setFilterCommand(self::CMD_INSERT);
 		$table_gui->parseData();
@@ -285,10 +299,10 @@ class ilVimpPageComponentPluginGUI extends ilPageComponentPluginGUI {
 		$xvmpEditVideoFormGUI = new xvmpEditVideoFormGUI($this, $_POST['mid']);
 		$xvmpEditVideoFormGUI->setValuesByPost();
 		if ($xvmpEditVideoFormGUI->saveForm()) {
-			ilUtil::sendSuccess($this->pl->txt('form_saved'), true);
+            $this->dic->ui()->mainTemplate()->setOnScreenMessage('info', $this->pl->txt('form_saved'));
 			$this->redirect(xvmpOwnVideosGUI::CMD_EDIT_VIDEO);
 		}
-		ilUtil::sendFailure($this->pl->txt('msg_incomplete'));
+        $this->dic->ui()->mainTemplate()->setOnScreenMessage('failure', $this->pl->txt('msg_incomplete'));
 		$this->tpl->setContent($xvmpEditVideoFormGUI->getHTML());
 	}
 
@@ -308,11 +322,10 @@ class ilVimpPageComponentPluginGUI extends ilPageComponentPluginGUI {
 		$xvmpEditVideoFormGUI = new xvmpUploadVideoFormGUI($this);
 		$xvmpEditVideoFormGUI->setValuesByPost();
 		if ($xvmpEditVideoFormGUI->uploadVideo()) {
-			ilUtil::sendSuccess($this->pl->txt('video_uploaded'), true);
+            $this->dic->ui()->mainTemplate()->setOnScreenMessage('info', $this->pl->txt('video_uploaded'));
 			$this->ctrl->redirect($this, self::CMD_STANDARD);
 		}
-
-		ilUtil::sendFailure($this->pl->txt('form_incomplete'));
+        $this->dic->ui()->mainTemplate()->setOnScreenMessage('failure', $this->pl->txt('form_incomplete'));
 		$xvmpEditVideoFormGUI->setValuesByPost();
 		$this->tpl->setContent($xvmpEditVideoFormGUI->getHTML());
 	}
@@ -347,7 +360,7 @@ class ilVimpPageComponentPluginGUI extends ilPageComponentPluginGUI {
 
 //		xvmpEventLog::logEvent(xvmpEventLog::ACTION_DELETE, $this->getObjId(), $video);
 
-		ilUtil::sendSuccess($this->pl->txt('video_deleted'), true);
+        $this->dic->ui()->mainTemplate()->setOnScreenMessage('info', $this->pl->txt('video_deleted'));
 		$this->redirect(self::CMD_STANDARD);
 	}
 
@@ -358,9 +371,9 @@ class ilVimpPageComponentPluginGUI extends ilPageComponentPluginGUI {
 		$xoctPlupload = new xoctPlupload();
 		$tmp_id = $_GET['tmp_id'];
 
-		$dir = ILIAS_ABSOLUTE_PATH  . ltrim(ilUtil::getWebspaceDir(), '.') . '/vimp/' . $tmp_id;
+		$dir = ILIAS_ABSOLUTE_PATH  . ltrim(ilFileUtils::getWebspaceDir(), '.') . '/vimp/' . $tmp_id;
 		if (!is_dir($dir)) {
-			ilUtil::makeDir($dir);
+			ilFileUtils::makeDir($dir);
 		}
 
 		$xoctPlupload->setTargetDir($dir);
@@ -370,14 +383,17 @@ class ilVimpPageComponentPluginGUI extends ilPageComponentPluginGUI {
 	/**
 	 *
 	 */
-	public function create() {
+	public function create(): void
+    {
 		$mid = filter_input(INPUT_GET, 'mid', FILTER_SANITIZE_NUMBER_INT);
         $video = xvmpMedium::find($mid);
 
         $video_properties = array(
 			"mid" => $mid,
-			"width" => Config::getField(Config::KEY_DEFAULT_WIDTH) ?: (isset($video->getProperties()['width']) ? $video->getProperties()['width'] : 268),
-			"height" => Config::getField(Config::KEY_DEFAULT_HEIGHT) ?: (isset($video->getProperties()['height']) ? $video->getProperties()['height'] : 150)
+			//"width" => Config::getField(Config::KEY_DEFAULT_WIDTH) ?: (isset($video->getProperties()['width']) ? $video->getProperties()['width'] : 268),
+			//"height" => Config::getField(Config::KEY_DEFAULT_HEIGHT) ?: (isset($video->getProperties()['height']) ? $video->getProperties()['height'] : 150)
+            "width" => ($video->getProperties()['width'] ?? 268),
+            "height" => ($video->getProperties()['height'] ?? 150)
 		);
 
 		if ($this->createElement($video_properties)) {
@@ -392,7 +408,8 @@ class ilVimpPageComponentPluginGUI extends ilPageComponentPluginGUI {
 	/**
 	 *
 	 */
-	public function edit() {
+	public function edit(): void
+    {
 		global $tpl;
 
 		$form = $this->initForm();
@@ -413,7 +430,7 @@ class ilVimpPageComponentPluginGUI extends ilPageComponentPluginGUI {
 			$properties['width'] = $size['width'];
 			$properties['height'] = $size['height'];
 			if ($this->updateElement($properties)) {
-				ilUtil::sendSuccess($lng->txt("msg_obj_modified"), true);
+                $this->dic->ui()->mainTemplate()->setOnScreenMessage('info', $this->pl->txt('msg_obj_modified'));
 				$this->returnToParent();
 			}
 		}
@@ -440,8 +457,8 @@ class ilVimpPageComponentPluginGUI extends ilPageComponentPluginGUI {
 		include_once("Services/Form/classes/class.ilPropertyFormGUI.php");
 		$form = new ilPropertyFormGUI();
         $prop = $this->getProperties();
-        $prop['width'] = round($prop['width']);
-        $prop['height'] = round($prop['height']);
+        $prop['width'] = round((int) $prop['width']);
+        $prop['height'] = round((int) $prop['height']);
         $video = xvmpMedium::find($prop['mid']);
 
         // slider
@@ -491,7 +508,8 @@ class ilVimpPageComponentPluginGUI extends ilPageComponentPluginGUI {
 	 *
 	 * @return mixed
 	 */
-	public function getElementHTML($a_mode, array $a_properties, $a_plugin_version) {
+	public function getElementHTML($a_mode, array $a_properties, $a_plugin_version): string
+    {
 		try {
 			$video = xvmpMedium::find($a_properties['mid']);
 
@@ -524,7 +542,7 @@ class ilVimpPageComponentPluginGUI extends ilPageComponentPluginGUI {
     /**
      * @return ilVimpPageComponentPlugin
      */
-    public function getPlugin()
+    public function getPlugin(): ilPageComponentPlugin
     {
         return parent::getPlugin();
     }
@@ -533,7 +551,7 @@ class ilVimpPageComponentPluginGUI extends ilPageComponentPluginGUI {
     /**
      * @return array
      */
-    protected function getRangeSliderConfig()
+    protected function getRangeSliderConfig(): array
     {
         return [
             'skin' => 'round',

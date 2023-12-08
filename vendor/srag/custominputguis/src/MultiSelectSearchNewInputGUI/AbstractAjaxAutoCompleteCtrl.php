@@ -1,13 +1,13 @@
 <?php
 
-namespace srag\CustomInputGUIs\VimpPageComponent\MultiSelectSearchNewInputGUI;
+namespace srag\CustomInputGUIs\MultiSelectSearchNewInputGUI;
 
-use srag\DIC\VimpPageComponent\DICTrait;
+use srag\DIC\DICTrait;
 
 /**
  * Class AbstractAjaxAutoCompleteCtrl
  *
- * @package srag\CustomInputGUIs\VimpPageComponent\MultiSelectSearchNewInputGUI
+ * @package srag\CustomInputGUIs\MultiSelectSearchNewInputGUI
  *
  * @author  studer + raimann ag - Team Custom 1 <support-custom1@studer-raimann.ch>
  */

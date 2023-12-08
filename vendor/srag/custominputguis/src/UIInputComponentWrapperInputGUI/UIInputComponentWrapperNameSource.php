@@ -1,13 +1,13 @@
 <?php
 
-namespace srag\CustomInputGUIs\VimpPageComponent\UIInputComponentWrapperInputGUI;
+namespace srag\CustomInputGUIs\UIInputComponentWrapperInputGUI;
 
 use ILIAS\UI\Implementation\Component\Input\NameSource;
 
 /**
  * Class UIInputComponentWrapperNameSource
  *
- * @package srag\CustomInputGUIs\VimpPageComponent\UIInputComponentWrapperInputGUI
+ * @package srag\CustomInputGUIs\UIInputComponentWrapperInputGUI
  *
  * @author  studer + raimann ag - Team Custom 1 <support-custom1@studer-raimann.ch>
  */

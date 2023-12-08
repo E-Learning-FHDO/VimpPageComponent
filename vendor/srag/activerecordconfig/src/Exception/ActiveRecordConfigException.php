@@ -1,13 +1,13 @@
 <?php
 
-namespace srag\ActiveRecordConfig\VimpPageComponent\Exception;
+namespace srag\ActiveRecordConfig\Exception;
 
 use ilException;
 
 /**
  * Class ActiveRecordConfigException
  *
- * @package srag\ActiveRecordConfig\VimpPageComponent\Exception
+ * @package srag\ActiveRecordConfig\Exception
  *
  * @author  studer + raimann ag - Team Custom 1 <support-custom1@studer-raimann.ch>
  *

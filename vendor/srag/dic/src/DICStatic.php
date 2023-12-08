@@ -1,24 +1,24 @@
 <?php
 
-namespace srag\DIC\VimpPageComponent;
+namespace srag\DIC;
 
 use ilLogLevel;
 use ilPlugin;
-use srag\DIC\VimpPageComponent\DIC\DICInterface;
-use srag\DIC\VimpPageComponent\DIC\Implementation\ILIAS54DIC;
-use srag\DIC\VimpPageComponent\DIC\Implementation\ILIAS60DIC;
-use srag\DIC\VimpPageComponent\Exception\DICException;
-use srag\DIC\VimpPageComponent\Output\Output;
-use srag\DIC\VimpPageComponent\Output\OutputInterface;
-use srag\DIC\VimpPageComponent\Plugin\Plugin;
-use srag\DIC\VimpPageComponent\Plugin\PluginInterface;
-use srag\DIC\VimpPageComponent\Version\Version;
-use srag\DIC\VimpPageComponent\Version\VersionInterface;
+use srag\DIC\DIC\DICInterface;
+use srag\DIC\DIC\Implementation\ILIAS54DIC;
+use srag\DIC\DIC\Implementation\ILIAS60DIC;
+use srag\DIC\Exception\DICException;
+use srag\DIC\Output\Output;
+use srag\DIC\Output\OutputInterface;
+use srag\DIC\Plugin\Plugin;
+use srag\DIC\Plugin\PluginInterface;
+use srag\DIC\Version\Version;
+use srag\DIC\Version\VersionInterface;
 
 /**
  * Class DICStatic
  *
- * @package srag\DIC\VimpPageComponent
+ * @package srag\DIC
  *
  * @author  studer + raimann ag - Team Custom 1 <support-custom1@studer-raimann.ch>
  */

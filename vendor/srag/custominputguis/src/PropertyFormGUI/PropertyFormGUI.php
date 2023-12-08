@@ -1,6 +1,6 @@
 <?php
 
-namespace srag\CustomInputGUIs\VimpPageComponent\PropertyFormGUI;
+namespace srag\CustomInputGUIs\PropertyFormGUI;
 
 use Closure;
 use ilFormPropertyGUI;
@@ -9,18 +9,18 @@ use ilPropertyFormGUI;
 use ilRadioGroupInputGUI;
 use ilRadioOption;
 use ilSubEnabledFormPropertyGUI;
-use srag\CustomInputGUIs\VimpPageComponent\MultiLineInputGUI\MultiLineInputGUI;
-use srag\CustomInputGUIs\VimpPageComponent\MultiLineNewInputGUI\MultiLineNewInputGUI;
-use srag\CustomInputGUIs\VimpPageComponent\PropertyFormGUI\Exception\PropertyFormGUIException;
-use srag\CustomInputGUIs\VimpPageComponent\PropertyFormGUI\Items\Items;
-use srag\CustomInputGUIs\VimpPageComponent\TabsInputGUI\TabsInputGUI;
-use srag\CustomInputGUIs\VimpPageComponent\TabsInputGUI\TabsInputGUITab;
-use srag\DIC\VimpPageComponent\DICTrait;
+use srag\CustomInputGUIs\MultiLineInputGUI\MultiLineInputGUI;
+use srag\CustomInputGUIs\MultiLineNewInputGUI\MultiLineNewInputGUI;
+use srag\CustomInputGUIs\PropertyFormGUI\Exception\PropertyFormGUIException;
+use srag\CustomInputGUIs\PropertyFormGUI\Items\Items;
+use srag\CustomInputGUIs\TabsInputGUI\TabsInputGUI;
+use srag\CustomInputGUIs\TabsInputGUI\TabsInputGUITab;
+use srag\DIC\DICTrait;
 
 /**
  * Class PropertyFormGUI
  *
- * @package    srag\CustomInputGUIs\VimpPageComponent\PropertyFormGUI
+ * @package    srag\CustomInputGUIs\PropertyFormGUI
  *
  * @author     studer + raimann ag - Team Custom 1 <support-custom1@studer-raimann.ch>
  *

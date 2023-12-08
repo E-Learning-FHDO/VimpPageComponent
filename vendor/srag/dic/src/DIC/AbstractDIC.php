@@ -1,15 +1,15 @@
 <?php
 
-namespace srag\DIC\VimpPageComponent\DIC;
+namespace srag\DIC\DIC;
 
 use ILIAS\DI\Container;
-use srag\DIC\VimpPageComponent\Database\DatabaseDetector;
-use srag\DIC\VimpPageComponent\Database\DatabaseInterface;
+use srag\DIC\Database\DatabaseDetector;
+use srag\DIC\Database\DatabaseInterface;
 
 /**
  * Class AbstractDIC
  *
- * @package srag\DIC\VimpPageComponent\DIC
+ * @package srag\DIC\DIC
  *
  * @author  studer + raimann ag - Team Custom 1 <support-custom1@studer-raimann.ch>
  */

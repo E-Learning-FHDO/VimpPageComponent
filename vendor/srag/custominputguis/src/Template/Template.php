@@ -1,13 +1,13 @@
 <?php
 
-namespace srag\CustomInputGUIs\VimpPageComponent\Template;
+namespace srag\CustomInputGUIs\Template;
 
 use ilTemplate;
 
 /**
  * Class Template
  *
- * @package srag\CustomInputGUIs\VimpPageComponent\Template
+ * @package srag\CustomInputGUIs\Template
  *
  * @author  studer + raimann ag - Team Custom 1 <support-custom1@studer-raimann.ch>
  */

@@ -1,15 +1,15 @@
 <?php
 
-namespace srag\CustomInputGUIs\VimpPageComponent\PropertyFormGUI;
+namespace srag\CustomInputGUIs\PropertyFormGUI;
 
 use ActiveRecord;
 use ilObject;
-use srag\CustomInputGUIs\VimpPageComponent\PropertyFormGUI\Items\Items;
+use srag\CustomInputGUIs\PropertyFormGUI\Items\Items;
 
 /**
  * Class ObjectPropertyFormGUI
  *
- * @package    srag\CustomInputGUIs\VimpPageComponent\PropertyFormGUI
+ * @package    srag\CustomInputGUIs\PropertyFormGUI
  *
  * @author     studer + raimann ag - Team Custom 1 <support-custom1@studer-raimann.ch>
  *

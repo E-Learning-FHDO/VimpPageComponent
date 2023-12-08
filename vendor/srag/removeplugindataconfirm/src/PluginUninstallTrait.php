@@ -1,11 +1,11 @@
 <?php
 
-namespace srag\RemovePluginDataConfirm\VimpPageComponent;
+namespace srag\RemovePluginDataConfirm;
 
 /**
  * Trait PluginUninstallTrait
  *
- * @package srag\RemovePluginDataConfirm\VimpPageComponent
+ * @package srag\RemovePluginDataConfirm
  *
  * @author  studer + raimann ag - Team Custom 1 <support-custom1@studer-raimann.ch>
  */

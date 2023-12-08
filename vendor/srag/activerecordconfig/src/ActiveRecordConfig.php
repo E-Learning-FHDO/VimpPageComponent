@@ -1,17 +1,17 @@
 <?php
 
-namespace srag\ActiveRecordConfig\VimpPageComponent;
+namespace srag\ActiveRecordConfig;
 
 use arConnector;
-use srag\ActiveRecordConfig\VimpPageComponent\Config\AbstractFactory;
-use srag\ActiveRecordConfig\VimpPageComponent\Config\AbstractRepository;
-use srag\ActiveRecordConfig\VimpPageComponent\Config\Config;
-use srag\ActiveRecordConfig\VimpPageComponent\Exception\ActiveRecordConfigException;
+use srag\ActiveRecordConfig\Config\AbstractFactory;
+use srag\ActiveRecordConfig\Config\AbstractRepository;
+use srag\ActiveRecordConfig\Config\Config;
+use srag\ActiveRecordConfig\Exception\ActiveRecordConfigException;
 
 /**
  * Class ActiveRecordConfig
  *
- * @package    srag\ActiveRecordConfig\VimpPageComponent
+ * @package    srag\ActiveRecordConfig
  *
  * @author     studer + raimann ag - Team Custom 1 <support-custom1@studer-raimann.ch>
  *
@@ -151,7 +151,7 @@ class ActiveRecordConfig extends Config
 /**
  * Class ActiveRecordConfigRepository
  *
- * @package    srag\ActiveRecordConfig\VimpPageComponent
+ * @package    srag\ActiveRecordConfig
  *
  * @author     studer + raimann ag - Team Custom 1 <support-custom1@studer-raimann.ch>
  *
@@ -255,7 +255,7 @@ final class ActiveRecordConfigRepository extends AbstractRepository
 /**
  * Class ActiveRecordConfigFactory
  *
- * @package    srag\ActiveRecordConfig\VimpPageComponent
+ * @package    srag\ActiveRecordConfig
  *
  * @author     studer + raimann ag - Team Custom 1 <support-custom1@studer-raimann.ch>
  *

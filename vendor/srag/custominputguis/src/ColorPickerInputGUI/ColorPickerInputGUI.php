@@ -1,15 +1,15 @@
 <?php
 
-namespace srag\CustomInputGUIs\VimpPageComponent\ColorPickerInputGUI;
+namespace srag\CustomInputGUIs\ColorPickerInputGUI;
 
 use ilColorPickerInputGUI;
-use srag\CustomInputGUIs\VimpPageComponent\Template\Template;
-use srag\DIC\VimpPageComponent\DICTrait;
+use srag\CustomInputGUIs\Template\Template;
+use srag\DIC\DICTrait;
 
 /**
  * Class ColorPickerInputGUI
  *
- * @package srag\CustomInputGUIs\VimpPageComponent\ColorPickerInputGUI
+ * @package srag\CustomInputGUIs\ColorPickerInputGUI
  *
  * @author  studer + raimann ag - Team Custom 1 <support-custom1@studer-raimann.ch>
  */

@@ -1,17 +1,17 @@
 <?php
 
-namespace srag\DIC\VimpPageComponent\Loader;
+namespace srag\DIC\Loader;
 
 use ILIAS\UI\Component\Component;
 use ILIAS\UI\Implementation\Render\ComponentRenderer;
 use ILIAS\UI\Implementation\Render\Loader;
 use ILIAS\UI\Implementation\Render\RendererFactory;
-use srag\DIC\VimpPageComponent\DICTrait;
+use srag\DIC\DICTrait;
 
 /**
  * Class AbstractLoaderDetector
  *
- * @package srag\DIC\VimpPageComponent\Loader
+ * @package srag\DIC\Loader
  *
  * @author  studer + raimann ag - Team Custom 1 <support-custom1@studer-raimann.ch>
  */

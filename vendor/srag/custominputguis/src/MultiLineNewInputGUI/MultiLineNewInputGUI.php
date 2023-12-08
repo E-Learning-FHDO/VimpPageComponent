@@ -1,20 +1,20 @@
 <?php
 
-namespace srag\CustomInputGUIs\VimpPageComponent\MultiLineNewInputGUI;
+namespace srag\CustomInputGUIs\MultiLineNewInputGUI;
 
 use ilFormPropertyGUI;
 use ILIAS\UI\Component\Glyph\Factory as GlyphFactory54;
 use ilTableFilterItem;
 use ilTemplate;
 use ilToolbarItem;
-use srag\CustomInputGUIs\VimpPageComponent\PropertyFormGUI\Items\Items;
-use srag\CustomInputGUIs\VimpPageComponent\Template\Template;
-use srag\DIC\VimpPageComponent\DICTrait;
+use srag\CustomInputGUIs\PropertyFormGUI\Items\Items;
+use srag\CustomInputGUIs\Template\Template;
+use srag\DIC\DICTrait;
 
 /**
  * Class MultiLineNewInputGUI
  *
- * @package srag\CustomInputGUIs\VimpPageComponent\MultiLineNewInputGUI
+ * @package srag\CustomInputGUIs\MultiLineNewInputGUI
  *
  * @author  studer + raimann ag - Team Custom 1 <support-custom1@studer-raimann.ch>
  */

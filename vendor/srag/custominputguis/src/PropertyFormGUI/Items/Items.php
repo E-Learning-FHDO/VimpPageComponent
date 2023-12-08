@@ -1,6 +1,6 @@
 <?php
 
-namespace srag\CustomInputGUIs\VimpPageComponent\PropertyFormGUI\Items;
+namespace srag\CustomInputGUIs\PropertyFormGUI\Items;
 
 use ilDateTime;
 use ilFormPropertyGUI;
@@ -11,19 +11,19 @@ use ilPropertyFormGUI;
 use ilRadioOption;
 use ilRepositorySelector2InputGUI;
 use ilUtil;
-use srag\CustomInputGUIs\VimpPageComponent\MultiLineInputGUI\MultiLineInputGUI;
-use srag\CustomInputGUIs\VimpPageComponent\PropertyFormGUI\Exception\PropertyFormGUIException;
-use srag\CustomInputGUIs\VimpPageComponent\PropertyFormGUI\PropertyFormGUI;
-use srag\CustomInputGUIs\VimpPageComponent\TableGUI\TableGUI;
-use srag\CustomInputGUIs\VimpPageComponent\Template\Template;
-use srag\CustomInputGUIs\VimpPageComponent\UIInputComponentWrapperInputGUI\UIInputComponentWrapperInputGUI;
-use srag\DIC\VimpPageComponent\DICTrait;
+use srag\CustomInputGUIs\MultiLineInputGUI\MultiLineInputGUI;
+use srag\CustomInputGUIs\PropertyFormGUI\Exception\PropertyFormGUIException;
+use srag\CustomInputGUIs\PropertyFormGUI\PropertyFormGUI;
+use srag\CustomInputGUIs\TableGUI\TableGUI;
+use srag\CustomInputGUIs\Template\Template;
+use srag\CustomInputGUIs\UIInputComponentWrapperInputGUI\UIInputComponentWrapperInputGUI;
+use srag\DIC\DICTrait;
 use TypeError;
 
 /**
  * Class Items
  *
- * @package srag\CustomInputGUIs\VimpPageComponent\PropertyFormGUI\Items
+ * @package srag\CustomInputGUIs\PropertyFormGUI\Items
  *
  * @author  studer + raimann ag - Team Custom 1 <support-custom1@studer-raimann.ch>
  *

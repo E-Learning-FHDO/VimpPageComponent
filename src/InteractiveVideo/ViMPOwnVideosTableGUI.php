@@ -79,7 +79,8 @@ class ViMPOwnVideosTableGUI extends vpcoOwnVideosTableGUI
      *
      * @return string
      */
-    protected function getAddButton($a_set) {
+    protected function getAddButton($a_set): string
+    {
         $button = ilLinkButton::getInstance();
         $button->setCaption('add');
         $this->ctrl->setParameter($this->parent_obj, 'mid', $a_set['mid']);

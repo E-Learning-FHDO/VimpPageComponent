@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 require_once __DIR__ . '/../vendor/autoload.php';
 
 /**
@@ -15,7 +18,7 @@ class ilVimpPageComponentPlugin extends ilPageComponentPlugin {
      *
      * @return string
      */
-    function getPluginName()
+    function getPluginName(): string
     {
         return "VimpPageComponent";
     }
@@ -26,7 +29,7 @@ class ilVimpPageComponentPlugin extends ilPageComponentPlugin {
      *
      * @return string
      */
-    function isValidParentType($a_parent_type)
+    function isValidParentType($a_parent_type): bool
     {
         return true;
     }

@@ -1,6 +1,6 @@
 <?php
 
-namespace srag\CustomInputGUIs\VimpPageComponent\InputGUIWrapperUIInputComponent;
+namespace srag\CustomInputGUIs\InputGUIWrapperUIInputComponent;
 
 use ilFormPropertyGUI;
 use ILIAS\Data\Factory as DataFactory;
@@ -9,7 +9,7 @@ use ilLanguage;
 /**
  * Trait InputGUIWrapperConstraintTrait
  *
- * @package srag\CustomInputGUIs\VimpPageComponent\InputGUIWrapperUIInputComponent
+ * @package srag\CustomInputGUIs\InputGUIWrapperUIInputComponent
  *
  * @author  studer + raimann ag - Team Custom 1 <support-custom1@studer-raimann.ch>
  */

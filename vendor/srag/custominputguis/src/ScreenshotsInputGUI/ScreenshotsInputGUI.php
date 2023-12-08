@@ -1,6 +1,6 @@
 <?php
 
-namespace srag\CustomInputGUIs\VimpPageComponent\ScreenshotsInputGUI;
+namespace srag\CustomInputGUIs\ScreenshotsInputGUI;
 
 use GuzzleHttp\Psr7\UploadedFile;
 use ilFormException;
@@ -8,14 +8,14 @@ use ilFormPropertyGUI;
 use ILIAS\FileUpload\DTO\ProcessingStatus;
 use ILIAS\FileUpload\DTO\UploadResult;
 use ilTemplate;
-use srag\DIC\VimpPageComponent\DICTrait;
-use srag\DIC\VimpPageComponent\Plugin\Pluginable;
-use srag\DIC\VimpPageComponent\Plugin\PluginInterface;
+use srag\DIC\DICTrait;
+use srag\DIC\Plugin\Pluginable;
+use srag\DIC\Plugin\PluginInterface;
 
 /**
  * Class ScreenshotsInputGUI
  *
- * @package srag\CustomInputGUIs\VimpPageComponent\ScreenshotsInputGUI
+ * @package srag\CustomInputGUIs\ScreenshotsInputGUI
  *
  * @author  studer + raimann ag - Team Custom 1 <support-custom1@studer-raimann.ch>
  */

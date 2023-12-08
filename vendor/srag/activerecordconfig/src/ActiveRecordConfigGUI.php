@@ -1,16 +1,16 @@
 <?php
 
-namespace srag\ActiveRecordConfig\VimpPageComponent;
+namespace srag\ActiveRecordConfig;
 
 use ilPluginConfigGUI;
 use ilUtil;
-use srag\ActiveRecordConfig\VimpPageComponent\Exception\ActiveRecordConfigException;
-use srag\DIC\VimpPageComponent\DICTrait;
+use srag\ActiveRecordConfig\Exception\ActiveRecordConfigException;
+use srag\DIC\DICTrait;
 
 /**
  * Class ActiveRecordConfigGUI
  *
- * @package    srag\ActiveRecordConfig\VimpPageComponent
+ * @package    srag\ActiveRecordConfig
  *
  * @author     studer + raimann ag - Team Custom 1 <support-custom1@studer-raimann.ch>
  *

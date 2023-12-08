@@ -24,8 +24,8 @@ So I recommand to use [srag/librariesnamespacechanger](https://packagist.org/pac
 First you need to init the active record class with your own table name and fields with your own repository and factory. Please call it very early in your plugin code
 ```php
 ...
-use srag\ActiveRecordConfig\VimpPageComponent\x\Config\AbstractFactory;
-use srag\ActiveRecordConfig\VimpPageComponent\x\Config\AbstractRepository;
+use srag\ActiveRecordConfig\x\Config\AbstractFactory;
+use srag\ActiveRecordConfig\x\Config\AbstractRepository;
 ...
 final class Repository extends AbstractRepository
 {
@@ -91,7 +91,7 @@ final class Repository extends AbstractRepository
 ```
 ```php
 ...
-use srag\ActiveRecordConfig\VimpPageComponent\x\Config\AbstractFactory;
+use srag\ActiveRecordConfig\x\Config\AbstractFactory;
 ...
 final class Factory extends AbstractFactory
 {

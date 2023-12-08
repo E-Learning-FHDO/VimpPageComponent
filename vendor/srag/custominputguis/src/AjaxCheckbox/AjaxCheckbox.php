@@ -1,15 +1,15 @@
 <?php
 
-namespace srag\CustomInputGUIs\VimpPageComponent\CheckboxInputGUI;
+namespace srag\CustomInputGUIs\CheckboxInputGUI;
 
-use srag\CustomInputGUIs\VimpPageComponent\Template\Template;
-use srag\CustomInputGUIs\VimpPageComponent\Waiter\Waiter;
-use srag\DIC\VimpPageComponent\DICTrait;
+use srag\CustomInputGUIs\Template\Template;
+use srag\CustomInputGUIs\Waiter\Waiter;
+use srag\DIC\DICTrait;
 
 /**
  * Class AjaxCheckbox
  *
- * @package srag\CustomInputGUIs\VimpPageComponent\CheckboxInputGUI
+ * @package srag\CustomInputGUIs\CheckboxInputGUI
  *
  * @author  studer + raimann ag - Team Custom 1 <support-custom1@studer-raimann.ch>
  */

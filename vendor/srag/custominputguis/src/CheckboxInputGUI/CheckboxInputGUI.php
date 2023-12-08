@@ -1,15 +1,15 @@
 <?php
 
-namespace srag\CustomInputGUIs\VimpPageComponent\CheckboxInputGUI;
+namespace srag\CustomInputGUIs\CheckboxInputGUI;
 
 use ilCheckboxInputGUI;
 use ilTableFilterItem;
-use srag\DIC\VimpPageComponent\DICTrait;
+use srag\DIC\DICTrait;
 
 /**
  * Class CheckboxInputGUI
  *
- * @package srag\CustomInputGUIs\VimpPageComponent\CheckboxInputGUI
+ * @package srag\CustomInputGUIs\CheckboxInputGUI
  *
  * @author  studer + raimann ag - Team Custom 1 <support-custom1@studer-raimann.ch>
  */

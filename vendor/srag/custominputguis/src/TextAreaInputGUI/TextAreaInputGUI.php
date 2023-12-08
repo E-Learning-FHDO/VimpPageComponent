@@ -1,15 +1,15 @@
 <?php
 
-namespace srag\CustomInputGUIs\VimpPageComponent\TextAreaInputGUI;
+namespace srag\CustomInputGUIs\TextAreaInputGUI;
 
 use ilTextAreaInputGUI;
-use srag\CustomInputGUIs\VimpPageComponent\Template\Template;
-use srag\DIC\VimpPageComponent\DICTrait;
+use srag\CustomInputGUIs\Template\Template;
+use srag\DIC\DICTrait;
 
 /**
  * Class TextAreaInputGUI
  *
- * @package srag\CustomInputGUIs\VimpPageComponent\TextAreaInputGUI
+ * @package srag\CustomInputGUIs\TextAreaInputGUI
  *
  * @author  studer + raimann ag - Team Custom 1 <support-custom1@studer-raimann.ch>
  * @author  Fabian Schmid <fs@studer-raimann.ch>

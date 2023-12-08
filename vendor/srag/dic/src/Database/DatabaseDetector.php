@@ -1,6 +1,6 @@
 <?php
 
-namespace srag\DIC\VimpPageComponent\Database;
+namespace srag\DIC\Database;
 
 use ilDBConstants;
 use ilDBInterface;
@@ -8,13 +8,13 @@ use ilDBPdoInterface;
 use ilDBPdoPostgreSQL;
 use ilDBStatement;
 use PDO;
-use srag\DIC\VimpPageComponent\Exception\DICException;
+use srag\DIC\Exception\DICException;
 use stdClass;
 
 /**
  * Class DatabaseDetector
  *
- * @package srag\DIC\VimpPageComponent\Database
+ * @package srag\DIC\Database
  *
  * @author  studer + raimann ag - Team Custom 1 <support-custom1@studer-raimann.ch>
  */

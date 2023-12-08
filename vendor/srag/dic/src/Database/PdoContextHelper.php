@@ -1,16 +1,16 @@
 <?php
 
-namespace srag\DIC\VimpPageComponent\Database;
+namespace srag\DIC\Database;
 
 use ilDBPdo;
 use ilDBPdoInterface;
 use PDO;
-use srag\DIC\VimpPageComponent\Exception\DICException;
+use srag\DIC\Exception\DICException;
 
 /**
  * Class PdoContextHelper
  *
- * @package srag\DIC\VimpPageComponent\Database
+ * @package srag\DIC\Database
  *
  * @author  studer + raimann ag - Team Custom 1 <support-custom1@studer-raimann.ch>
  *

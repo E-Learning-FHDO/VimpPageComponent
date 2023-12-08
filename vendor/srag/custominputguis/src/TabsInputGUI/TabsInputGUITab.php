@@ -1,15 +1,15 @@
 <?php
 
-namespace srag\CustomInputGUIs\VimpPageComponent\TabsInputGUI;
+namespace srag\CustomInputGUIs\TabsInputGUI;
 
 use ilFormPropertyGUI;
-use srag\CustomInputGUIs\VimpPageComponent\PropertyFormGUI\Items\Items;
-use srag\DIC\VimpPageComponent\DICTrait;
+use srag\CustomInputGUIs\PropertyFormGUI\Items\Items;
+use srag\DIC\DICTrait;
 
 /**
  * Class TabsInputGUITab
  *
- * @package srag\CustomInputGUIs\VimpPageComponent\TabsInputGUI
+ * @package srag\CustomInputGUIs\TabsInputGUI
  *
  * @author  studer + raimann ag - Team Custom 1 <support-custom1@studer-raimann.ch>
  */

@@ -1,13 +1,13 @@
 <?php
 
-namespace srag\CustomInputGUIs\VimpPageComponent\MultiSelectSearchNewInputGUI;
+namespace srag\CustomInputGUIs\MultiSelectSearchNewInputGUI;
 
 use ilDBConstants;
 
 /**
  * Class ObjectsAjaxAutoCompleteCtrl
  *
- * @package srag\CustomInputGUIs\VimpPageComponent\MultiSelectSearchNewInputGUI
+ * @package srag\CustomInputGUIs\MultiSelectSearchNewInputGUI
  *
  * @author  studer + raimann ag - Team Custom 1 <support-custom1@studer-raimann.ch>
  */

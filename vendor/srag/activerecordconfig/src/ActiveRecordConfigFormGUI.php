@@ -1,13 +1,13 @@
 <?php
 
-namespace srag\ActiveRecordConfig\VimpPageComponent;
+namespace srag\ActiveRecordConfig;
 
-use srag\CustomInputGUIs\VimpPageComponent\PropertyFormGUI\ConfigPropertyFormGUI;
+use srag\CustomInputGUIs\PropertyFormGUI\ConfigPropertyFormGUI;
 
 /**
  * Class ActiveRecordConfigFormGUI
  *
- * @package    srag\ActiveRecordConfig\VimpPageComponent
+ * @package    srag\ActiveRecordConfig
  *
  * @author     studer + raimann ag - Team Custom 1 <support-custom1@studer-raimann.ch>
  *

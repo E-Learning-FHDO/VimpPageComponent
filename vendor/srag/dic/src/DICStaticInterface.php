@@ -1,17 +1,17 @@
 <?php
 
-namespace srag\DIC\VimpPageComponent;
+namespace srag\DIC;
 
-use srag\DIC\VimpPageComponent\DIC\DICInterface;
-use srag\DIC\VimpPageComponent\Exception\DICException;
-use srag\DIC\VimpPageComponent\Output\OutputInterface;
-use srag\DIC\VimpPageComponent\Plugin\PluginInterface;
-use srag\DIC\VimpPageComponent\Version\VersionInterface;
+use srag\DIC\DIC\DICInterface;
+use srag\DIC\Exception\DICException;
+use srag\DIC\Output\OutputInterface;
+use srag\DIC\Plugin\PluginInterface;
+use srag\DIC\Version\VersionInterface;
 
 /**
  * Interface DICStaticInterface
  *
- * @package srag\DIC\VimpPageComponent
+ * @package srag\DIC
  *
  * @author  studer + raimann ag - Team Custom 1 <support-custom1@studer-raimann.ch>
  */

@@ -1,6 +1,6 @@
 <?php
 
-namespace srag\CustomInputGUIs\VimpPageComponent\InputGUIWrapperUIInputComponent;
+namespace srag\CustomInputGUIs\InputGUIWrapperUIInputComponent;
 
 use ILIAS\Validation\Constraint;
 use ILIAS\Validation\Constraints\Custom;
@@ -8,7 +8,7 @@ use ILIAS\Validation\Constraints\Custom;
 /**
  * Class InputGUIWrapperConstraint54
  *
- * @package srag\CustomInputGUIs\VimpPageComponent\InputGUIWrapperUIInputComponent
+ * @package srag\CustomInputGUIs\InputGUIWrapperUIInputComponent
  *
  * @author  studer + raimann ag - Team Custom 1 <support-custom1@studer-raimann.ch>
  */

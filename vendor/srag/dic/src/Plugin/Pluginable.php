@@ -1,11 +1,11 @@
 <?php
 
-namespace srag\DIC\VimpPageComponent\Plugin;
+namespace srag\DIC\Plugin;
 
 /**
  * Interface Pluginable
  *
- * @package srag\DIC\VimpPageComponent\Plugin
+ * @package srag\DIC\Plugin
  *
  * @author  studer + raimann ag - Team Custom 1 <support-custom1@studer-raimann.ch>
  */

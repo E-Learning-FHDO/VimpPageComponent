@@ -1,22 +1,22 @@
 <?php
 
-namespace srag\CustomInputGUIs\VimpPageComponent\TableGUI;
+namespace srag\CustomInputGUIs\TableGUI;
 
 use ilCSVWriter;
 use ilExcel;
 use ilFormPropertyGUI;
 use ilHtmlToPdfTransformerFactory;
 use ilTable2GUI;
-use srag\CustomInputGUIs\VimpPageComponent\PropertyFormGUI\Items\Items;
-use srag\CustomInputGUIs\VimpPageComponent\PropertyFormGUI\PropertyFormGUI;
-use srag\CustomInputGUIs\VimpPageComponent\TableGUI\Exception\TableGUIException;
-use srag\CustomInputGUIs\VimpPageComponent\Template\Template;
-use srag\DIC\VimpPageComponent\DICTrait;
+use srag\CustomInputGUIs\PropertyFormGUI\Items\Items;
+use srag\CustomInputGUIs\PropertyFormGUI\PropertyFormGUI;
+use srag\CustomInputGUIs\TableGUI\Exception\TableGUIException;
+use srag\CustomInputGUIs\Template\Template;
+use srag\DIC\DICTrait;
 
 /**
  * Class TableGUI
  *
- * @package    srag\CustomInputGUIs\VimpPageComponent\TableGUI
+ * @package    srag\CustomInputGUIs\TableGUI
  *
  * @author     studer + raimann ag - Team Custom 1 <support-custom1@studer-raimann.ch>
  *

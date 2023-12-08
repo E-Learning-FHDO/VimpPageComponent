@@ -1,13 +1,13 @@
 <?php
 
-namespace srag\DIC\VimpPageComponent\Exception;
+namespace srag\DIC\Exception;
 
 use ilException;
 
 /**
  * Class DICException
  *
- * @package srag\DIC\VimpPageComponent\Exception
+ * @package srag\DIC\Exception
  *
  * @author  studer + raimann ag - Team Custom 1 <support-custom1@studer-raimann.ch>
  */

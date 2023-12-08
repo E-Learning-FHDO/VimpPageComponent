@@ -1,6 +1,6 @@
 <?php
 
-namespace srag\CustomInputGUIs\VimpPageComponent\InputGUIWrapperUIInputComponent;
+namespace srag\CustomInputGUIs\InputGUIWrapperUIInputComponent;
 
 use ilHiddenInputGUI;
 use ILIAS\UI\Component\Component;
@@ -8,13 +8,13 @@ use ILIAS\UI\Component\Input\Field\Input as InputInterface;
 use ILIAS\UI\Implementation\Component\Input\Field\Input;
 use ILIAS\UI\Implementation\Render\Template;
 use ILIAS\UI\Renderer as RendererInterface;
-use srag\DIC\VimpPageComponent\DICStatic;
+use srag\DIC\DICStatic;
 
 if (DICStatic::version()->is6()) {
     /**
      * Class Renderer
      *
-     * @package srag\CustomInputGUIs\VimpPageComponent\InputGUIWrapperUIInputComponent
+     * @package srag\CustomInputGUIs\InputGUIWrapperUIInputComponent
      *
      * @author  studer + raimann ag - Team Custom 1 <support-custom1@studer-raimann.ch>
      */
@@ -50,7 +50,7 @@ if (DICStatic::version()->is6()) {
     /**
      * Class Renderer
      *
-     * @package srag\CustomInputGUIs\VimpPageComponent\InputGUIWrapperUIInputComponent
+     * @package srag\CustomInputGUIs\InputGUIWrapperUIInputComponent
      *
      * @author  studer + raimann ag - Team Custom 1 <support-custom1@studer-raimann.ch>
      */

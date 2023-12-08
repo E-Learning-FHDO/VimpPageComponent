@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 /* Copyright (c) 1998-2009 ILIAS open source, Extended GPL, see docs/LICENSE */
 
 use srag\Plugins\ViMP\UIComponents\Player\VideoPlayer;
@@ -14,7 +17,7 @@ class vpcoSearchVideosTableGUI extends xvmpSearchVideosTableGUI {
     /**
      * @var array
      */
-	protected $available_columns = array(
+	protected array $available_columns = array(
 		'thumbnail' => array(
 			'no_header' => true
 		),
@@ -40,16 +43,17 @@ class vpcoSearchVideosTableGUI extends xvmpSearchVideosTableGUI {
 	 * @param string $parent_cmd
 	 */
 	public function __construct($parent_gui, $parent_cmd) {
+        global $DIC;
 		parent::__construct($parent_gui, $parent_cmd);
         VideoPlayer::loadVideoJSAndCSS(false);
 		$base_link = $this->ctrl->getLinkTargetByClass(array(ilObjPluginDispatchGUI::class, ilObjViMPGUI::class, xvmpOwnVideosGUI::class),'', '', true);
 		$this->tpl_global->addOnLoadCode('VimpContent.ajax_base_url = "'.$base_link.'";');
-
-		$this->pl = new ilVimpPageComponentPlugin();
+        $this->db = $DIC->database();
+		$this->pl = new ilVimpPageComponentPlugin($this->db, $DIC["component.repository"], "vpco");
 		$this->setRowTemplate($this->pl->getDirectory() . '/templates/' . static::ROW_TEMPLATE);
 
 		$this->addHiddenInput('pco_data', json_encode($_POST));
-		$this->addHiddenInput('commandpg', $_POST['commandpg']);
+		//$this->addHiddenInput('commandpg', $_POST['commandpg']);
 		$this->addHiddenInput('target', json_encode($_POST['target']));
 
 		$this->ctrl->setParameter($this->parent_obj, 'vpco_cmd', 'applyFilter');
@@ -59,7 +63,7 @@ class vpcoSearchVideosTableGUI extends xvmpSearchVideosTableGUI {
 
 	}
 
-    public function getHTML()
+    public function getHTML(): string
     {
         return parent::getHTML() . xvmpGUI::getModalPlayer()->getHTML();
     }
@@ -68,18 +72,19 @@ class vpcoSearchVideosTableGUI extends xvmpSearchVideosTableGUI {
 	 *
 	 */
 	protected function initColumns() {
-		$this->addColumn($this->pl->txt('added'), '', 210, false);
+		$this->addColumn($this->pl->txt('added'), '', "210", false);
 
 		xvmpTableGUI::initColumns();
 
-		$this->addColumn('', '', 100, true);
+		$this->addColumn('', '', "100", true);
 	}
 
 
 	/**
 	 * @param xvmpObject $a_set
 	 */
-	protected function fillRow($a_set) {
+	protected function fillRow($a_set): void
+    {
 		$this->tpl->setVariable('VAL_MID', $a_set['mid']);
 
 		foreach ($this->available_columns as $title => $props)
@@ -109,7 +114,8 @@ class vpcoSearchVideosTableGUI extends xvmpSearchVideosTableGUI {
 	 *
 	 * @return string
 	 */
-	protected function getAddButton($a_set) {
+	protected function getAddButton($a_set): string
+    {
 		$button = ilLinkButton::getInstance();
 		$button->setCaption('add');
 		$this->ctrl->setParameter($this->parent_obj, 'mid', $a_set['mid']);

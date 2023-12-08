@@ -1,6 +1,6 @@
 <?php
 
-namespace srag\DIC\VimpPageComponent\DIC;
+namespace srag\DIC\DIC;
 
 use Collator;
 use ilAccessHandler;
@@ -66,13 +66,13 @@ use ilToolbarGUI;
 use ilTree;
 use ilUIService;
 use Session;
-use srag\DIC\VimpPageComponent\Database\DatabaseInterface;
-use srag\DIC\VimpPageComponent\Exception\DICException;
+use srag\DIC\Database\DatabaseInterface;
+use srag\DIC\Exception\DICException;
 
 /**
  * Interface DICInterface
  *
- * @package srag\DIC\VimpPageComponent\DIC
+ * @package srag\DIC\DIC
  *
  * @author  studer + raimann ag - Team Custom 1 <support-custom1@studer-raimann.ch>
  */

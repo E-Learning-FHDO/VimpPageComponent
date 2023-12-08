@@ -1,14 +1,14 @@
 <?php
 
-namespace srag\CustomInputGUIs\VimpPageComponent\ViewControlModeUI;
+namespace srag\CustomInputGUIs\ViewControlModeUI;
 
 use ilSession;
-use srag\DIC\VimpPageComponent\DICTrait;
+use srag\DIC\DICTrait;
 
 /**
  * Class ViewControlModeUI
  *
- * @package srag\CustomInputGUIs\VimpPageComponent\ViewControlModeUI
+ * @package srag\CustomInputGUIs\ViewControlModeUI
  *
  * @author  studer + raimann ag - Team Custom 1 <support-custom1@studer-raimann.ch>
  */

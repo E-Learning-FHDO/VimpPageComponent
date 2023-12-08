@@ -1,16 +1,16 @@
 <?php
 
-namespace srag\DIC\VimpPageComponent\Plugin;
+namespace srag\DIC\Plugin;
 
 use ilPlugin;
 use ilTemplateException;
-use srag\CustomInputGUIs\VimpPageComponent\Template\Template;
-use srag\DIC\VimpPageComponent\Exception\DICException;
+use srag\CustomInputGUIs\Template\Template;
+use srag\DIC\Exception\DICException;
 
 /**
  * Interface PluginInterface
  *
- * @package srag\DIC\VimpPageComponent\Plugin
+ * @package srag\DIC\Plugin
  *
  * @author  studer + raimann ag - Team Custom 1 <support-custom1@studer-raimann.ch>
  */

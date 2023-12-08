@@ -1,6 +1,6 @@
 <?php
 
-namespace srag\CustomInputGUIs\VimpPageComponent\Loader;
+namespace srag\CustomInputGUIs\Loader;
 
 use Closure;
 use ILIAS\UI\Component\Component;
@@ -9,14 +9,14 @@ use ILIAS\UI\Implementation\Render\ComponentRenderer;
 use ILIAS\UI\Implementation\Render\Loader;
 use ILIAS\UI\Renderer;
 use Pimple\Container;
-use srag\CustomInputGUIs\VimpPageComponent\InputGUIWrapperUIInputComponent\InputGUIWrapperUIInputComponent;
-use srag\CustomInputGUIs\VimpPageComponent\InputGUIWrapperUIInputComponent\Renderer as InputGUIWrapperUIInputComponentRenderer;
-use srag\DIC\VimpPageComponent\Loader\AbstractLoaderDetector;
+use srag\CustomInputGUIs\InputGUIWrapperUIInputComponent\InputGUIWrapperUIInputComponent;
+use srag\CustomInputGUIs\InputGUIWrapperUIInputComponent\Renderer as InputGUIWrapperUIInputComponentRenderer;
+use srag\DIC\Loader\AbstractLoaderDetector;
 
 /**
  * Class CustomInputGUIsLoaderDetector
  *
- * @package srag\CustomInputGUIs\VimpPageComponent\Loader
+ * @package srag\CustomInputGUIs\Loader
  *
  * @author  studer + raimann ag - Team Custom 1 <support-custom1@studer-raimann.ch>
  */

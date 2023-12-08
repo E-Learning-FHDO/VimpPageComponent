@@ -1,19 +1,19 @@
 <?php
 
-namespace srag\CustomInputGUIs\VimpPageComponent\MultiSelectSearchInputGUI;
+namespace srag\CustomInputGUIs\MultiSelectSearchInputGUI;
 
 use ilMultiSelectInputGUI;
 use ilTableFilterItem;
 use ilTemplate;
 use ilToolbarItem;
 use ilUtil;
-use srag\CustomInputGUIs\VimpPageComponent\Template\Template;
-use srag\DIC\VimpPageComponent\DICTrait;
+use srag\CustomInputGUIs\Template\Template;
+use srag\DIC\DICTrait;
 
 /**
  * Class MultiSelectSearchInputGUI
  *
- * @package    srag\CustomInputGUIs\VimpPageComponent\MultiSelectSearchInputGUI
+ * @package    srag\CustomInputGUIs\MultiSelectSearchInputGUI
  *
  * @author     studer + raimann ag - Team Custom 1 <support-custom1@studer-raimann.ch>
  * @author     Oskar Truffer <ot@studer-raimann.ch>

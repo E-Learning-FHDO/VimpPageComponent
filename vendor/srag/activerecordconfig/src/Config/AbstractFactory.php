@@ -1,13 +1,13 @@
 <?php
 
-namespace srag\ActiveRecordConfig\VimpPageComponent\Config;
+namespace srag\ActiveRecordConfig\Config;
 
-use srag\DIC\VimpPageComponent\DICTrait;
+use srag\DIC\DICTrait;
 
 /**
  * Class AbstractFactory
  *
- * @package srag\ActiveRecordConfig\VimpPageComponent\Config
+ * @package srag\ActiveRecordConfig\Config
  *
  * @author  studer + raimann ag - Team Custom 1 <support-custom1@studer-raimann.ch>
  */

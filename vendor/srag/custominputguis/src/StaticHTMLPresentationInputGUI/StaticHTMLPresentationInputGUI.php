@@ -1,17 +1,17 @@
 <?php
 
-namespace srag\CustomInputGUIs\VimpPageComponent\StaticHTMLPresentationInputGUI;
+namespace srag\CustomInputGUIs\StaticHTMLPresentationInputGUI;
 
 use ilFormException;
 use ilFormPropertyGUI;
 use ilTemplate;
-use srag\CustomInputGUIs\VimpPageComponent\Template\Template;
-use srag\DIC\VimpPageComponent\DICTrait;
+use srag\CustomInputGUIs\Template\Template;
+use srag\DIC\DICTrait;
 
 /**
  * Class StaticHTMLPresentationInputGUI
  *
- * @package srag\CustomInputGUIs\VimpPageComponent\StaticHTMLPresentationInputGUI
+ * @package srag\CustomInputGUIs\StaticHTMLPresentationInputGUI
  *
  * @author  studer + raimann ag - Team Custom 1 <support-custom1@studer-raimann.ch>
  */

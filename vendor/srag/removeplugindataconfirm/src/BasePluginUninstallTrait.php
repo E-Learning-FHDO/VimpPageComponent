@@ -1,15 +1,15 @@
 <?php
 
-namespace srag\RemovePluginDataConfirm\VimpPageComponent;
+namespace srag\RemovePluginDataConfirm;
 
 use ilUIPluginRouterGUI;
-use srag\DIC\VimpPageComponent\DICTrait;
-use srag\DIC\VimpPageComponent\Util\LibraryLanguageInstaller;
+use srag\DIC\DICTrait;
+use srag\DIC\Util\LibraryLanguageInstaller;
 
 /**
  * Trait BasePluginUninstallTrait
  *
- * @package srag\RemovePluginDataConfirm\VimpPageComponent
+ * @package srag\RemovePluginDataConfirm
  *
  * @author  studer + raimann ag - Team Custom 1 <support-custom1@studer-raimann.ch>
  *

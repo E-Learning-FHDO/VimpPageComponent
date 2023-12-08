@@ -1,16 +1,16 @@
 <?php
 
-namespace srag\CustomInputGUIs\VimpPageComponent\DateDurationInputGUI;
+namespace srag\CustomInputGUIs\DateDurationInputGUI;
 
 use ilCalendarUtil;
 use ilDateDurationInputGUI;
 use ilDateTime;
-use srag\DIC\VimpPageComponent\DICTrait;
+use srag\DIC\DICTrait;
 
 /**
  * Class DateDurationInputGUI
  *
- * @package srag\CustomInputGUIs\VimpPageComponent\DateDurationInputGUI
+ * @package srag\CustomInputGUIs\DateDurationInputGUI
  *
  * @author  studer + raimann ag - Team Custom 1 <support-custom1@studer-raimann.ch>
  * @author  Theodor Truffer <tt@studer-raimann.ch>

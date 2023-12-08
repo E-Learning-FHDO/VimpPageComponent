@@ -1,15 +1,15 @@
 <?php
 
-namespace srag\ActiveRecordConfig\VimpPageComponent;
+namespace srag\ActiveRecordConfig;
 
 use ActiveRecord;
 use ilObject;
-use srag\CustomInputGUIs\VimpPageComponent\PropertyFormGUI\ObjectPropertyFormGUI;
+use srag\CustomInputGUIs\PropertyFormGUI\ObjectPropertyFormGUI;
 
 /**
  * Class ActiveRecordObjectFormGUI
  *
- * @package    srag\ActiveRecordConfig\VimpPageComponent
+ * @package    srag\ActiveRecordConfig
  *
  * @author     studer + raimann ag - Team Custom 1 <support-custom1@studer-raimann.ch>
  *

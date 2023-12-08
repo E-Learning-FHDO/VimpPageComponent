@@ -1,6 +1,6 @@
 <?php
 
-namespace srag\CustomInputGUIs\VimpPageComponent\UIInputComponentWrapperInputGUI;
+namespace srag\CustomInputGUIs\UIInputComponentWrapperInputGUI;
 
 use ilFormException;
 use ilFormPropertyGUI;
@@ -9,14 +9,14 @@ use ILIAS\UI\Implementation\Component\Input\Container\Form\PostDataFromServerReq
 use ilTableFilterItem;
 use ilTemplate;
 use ilToolbarItem;
-use srag\CustomInputGUIs\VimpPageComponent\Template\Template;
-use srag\DIC\VimpPageComponent\DICTrait;
+use srag\CustomInputGUIs\Template\Template;
+use srag\DIC\DICTrait;
 use Throwable;
 
 /**
  * Class UIInputComponentWrapperInputGUI
  *
- * @package srag\CustomInputGUIs\VimpPageComponent\UIInputComponentWrapperInputGUI
+ * @package srag\CustomInputGUIs\UIInputComponentWrapperInputGUI
  *
  * @author  studer + raimann ag - Team Custom 1 <support-custom1@studer-raimann.ch>
  */

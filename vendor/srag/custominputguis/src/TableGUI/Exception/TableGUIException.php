@@ -1,13 +1,13 @@
 <?php
 
-namespace srag\CustomInputGUIs\VimpPageComponent\TableGUI\Exception;
+namespace srag\CustomInputGUIs\TableGUI\Exception;
 
 use ilException;
 
 /**
  * Class TableGUIException
  *
- * @package srag\CustomInputGUIs\VimpPageComponent\TableGUI\Exception
+ * @package srag\CustomInputGUIs\TableGUI\Exception
  *
  * @author  studer + raimann ag - Team Custom 1 <support-custom1@studer-raimann.ch>
  *

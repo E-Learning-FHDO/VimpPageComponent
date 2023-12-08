@@ -1,6 +1,6 @@
 <?php
 
-namespace srag\DIC\VimpPageComponent\Database;
+namespace srag\DIC\Database;
 
 use ilDBPdoInterface;
 use ilDBStatement;
@@ -8,7 +8,7 @@ use ilDBStatement;
 /**
  * Interface DatabaseInterface
  *
- * @package srag\DIC\VimpPageComponent\Database
+ * @package srag\DIC\Database
  *
  * @author  studer + raimann ag - Team Custom 1 <support-custom1@studer-raimann.ch>
  */

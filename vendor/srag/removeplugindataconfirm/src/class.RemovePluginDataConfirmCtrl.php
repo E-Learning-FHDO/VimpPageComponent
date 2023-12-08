@@ -1,6 +1,6 @@
 <?php
 
-namespace srag\RemovePluginDataConfirm\VimpPageComponent;
+namespace srag\RemovePluginDataConfirm;
 
 require_once __DIR__ . "./../../../autoload.php";
 
@@ -9,17 +9,17 @@ use ilConfirmationGUI;
 use ilObjComponentSettingsGUI;
 use ilSession;
 use ilUtil;
-use srag\DIC\VimpPageComponent\DICStatic;
-use srag\DIC\VimpPageComponent\DICTrait;
+use srag\DIC\DICStatic;
+use srag\DIC\DICTrait;
 
 /**
  * Class RemovePluginDataConfirmCtrl
  *
- * @package           srag\RemovePluginDataConfirm\VimpPageComponent
+ * @package           srag\RemovePluginDataConfirm
  *
  * @author            studer + raimann ag - Team Custom 1 <support-custom1@studer-raimann.ch>
  *
- * @ilCtrl_isCalledBy srag\RemovePluginDataConfirm\VimpPageComponent\RemovePluginDataConfirmCtrl: ilUIPluginRouterGUI
+ * @ilCtrl_isCalledBy srag\RemovePluginDataConfirm\RemovePluginDataConfirmCtrl: ilUIPluginRouterGUI
  */
 class RemovePluginDataConfirmCtrl
 {

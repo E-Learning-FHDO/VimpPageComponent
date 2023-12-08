@@ -1,13 +1,13 @@
 <?php
 
-namespace srag\CustomInputGUIs\VimpPageComponent\Waiter;
+namespace srag\CustomInputGUIs\Waiter;
 
-use srag\DIC\VimpPageComponent\DICTrait;
+use srag\DIC\DICTrait;
 
 /**
  * Class Waiter
  *
- * @package srag\CustomInputGUIs\VimpPageComponent\Waiter
+ * @package srag\CustomInputGUIs\Waiter
  *
  * @author  studer + raimann ag - Team Custom 1 <support-custom1@studer-raimann.ch>
  */

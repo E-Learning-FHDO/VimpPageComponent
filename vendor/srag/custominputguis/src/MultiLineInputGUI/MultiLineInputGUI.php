@@ -1,6 +1,6 @@
 <?php
 
-namespace srag\CustomInputGUIs\VimpPageComponent\MultiLineInputGUI;
+namespace srag\CustomInputGUIs\MultiLineInputGUI;
 
 use ilCalendarUtil;
 use ilDate;
@@ -13,14 +13,14 @@ use ilTemplate;
 use ilTextAreaInputGUI;
 use ilToolbarItem;
 use ilUtil;
-use srag\CustomInputGUIs\VimpPageComponent\GlyphGUI\GlyphGUI;
-use srag\CustomInputGUIs\VimpPageComponent\Template\Template;
-use srag\DIC\VimpPageComponent\DICTrait;
+use srag\CustomInputGUIs\GlyphGUI\GlyphGUI;
+use srag\CustomInputGUIs\Template\Template;
+use srag\DIC\DICTrait;
 
 /**
  * Class MultiLineInputGUI
  *
- * @package    srag\CustomInputGUIs\VimpPageComponent\MultiLineInputGUI
+ * @package    srag\CustomInputGUIs\MultiLineInputGUI
  *
  * @author     studer + raimann ag - Team Custom 1 <support-custom1@studer-raimann.ch>
  * @author     Michael Herren <mh@studer-raimann.ch>

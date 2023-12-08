@@ -28,7 +28,7 @@
   },
   "autoload": {
     "psr-4": {
-      "srag\\RemovePluginDataConfirm\\VimpPageComponent\\": "src/"
+      "srag\\RemovePluginDataConfirm\\": "src/"
     }
   },
   "config": {

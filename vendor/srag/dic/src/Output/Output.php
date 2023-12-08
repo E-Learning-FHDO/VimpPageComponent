@@ -1,20 +1,20 @@
 <?php
 
-namespace srag\DIC\VimpPageComponent\Output;
+namespace srag\DIC\Output;
 
 use ILIAS\UI\Component\Component;
 use ILIAS\UI\Implementation\Render\Template;
 use ilTable2GUI;
 use ilTemplate;
 use JsonSerializable;
-use srag\DIC\VimpPageComponent\DICTrait;
-use srag\DIC\VimpPageComponent\Exception\DICException;
+use srag\DIC\DICTrait;
+use srag\DIC\Exception\DICException;
 use stdClass;
 
 /**
  * Class Output
  *
- * @package srag\DIC\VimpPageComponent\Output
+ * @package srag\DIC\Output
  *
  * @author  studer + raimann ag - Team Custom 1 <support-custom1@studer-raimann.ch>
  */

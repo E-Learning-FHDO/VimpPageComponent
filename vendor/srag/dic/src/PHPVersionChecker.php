@@ -1,13 +1,13 @@
 <?php
 
-namespace srag\DIC\VimpPageComponent;
+namespace srag\DIC;
 
 use Throwable;
 
 /**
  * Class PHPVersionChecker
  *
- * @package srag\DIC\VimpPageComponent
+ * @package srag\DIC
  *
  * @author  studer + raimann ag - Team Custom 1 <support-custom1@studer-raimann.ch>
  */

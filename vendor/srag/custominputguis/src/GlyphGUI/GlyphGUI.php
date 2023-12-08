@@ -1,14 +1,14 @@
 <?php
 
-namespace srag\CustomInputGUIs\VimpPageComponent\GlyphGUI;
+namespace srag\CustomInputGUIs\GlyphGUI;
 
 use ilGlyphGUI;
-use srag\DIC\VimpPageComponent\DICTrait;
+use srag\DIC\DICTrait;
 
 /**
  * Class GlyphGUI
  *
- * @package srag\CustomInputGUIs\VimpPageComponent\GlyphGUI
+ * @package srag\CustomInputGUIs\GlyphGUI
  *
  * @author  studer + raimann ag - Team Custom 1 <support-custom1@studer-raimann.ch>
  * @author  Fabian Schmid <fs@studer-raimann.ch>

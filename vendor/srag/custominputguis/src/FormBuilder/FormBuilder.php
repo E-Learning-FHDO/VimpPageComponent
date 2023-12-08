@@ -1,13 +1,13 @@
 <?php
 
-namespace srag\CustomInputGUIs\VimpPageComponent\FormBuilder;
+namespace srag\CustomInputGUIs\FormBuilder;
 
 use ILIAS\UI\Component\Input\Container\Form\Form;
 
 /**
  * Interface FormBuilder
  *
- * @package srag\CustomInputGUIs\VimpPageComponent\FormBuilder
+ * @package srag\CustomInputGUIs\FormBuilder
  *
  * @author  studer + raimann ag - Team Custom 1 <support-custom1@studer-raimann.ch>
  */

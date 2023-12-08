@@ -1,18 +1,18 @@
 <?php
 
-namespace srag\CustomInputGUIs\VimpPageComponent\WeekdayInputGUI;
+namespace srag\CustomInputGUIs\WeekdayInputGUI;
 
 use ilCalendarUtil;
 use ilFormPropertyGUI;
 use ilTableFilterItem;
 use ilTemplate;
-use srag\CustomInputGUIs\VimpPageComponent\Template\Template;
-use srag\DIC\VimpPageComponent\DICTrait;
+use srag\CustomInputGUIs\Template\Template;
+use srag\DIC\DICTrait;
 
 /**
  * Class WeekdayInputGUI
  *
- * @package srag\CustomInputGUIs\VimpPageComponent\WeekdayInputGUI
+ * @package srag\CustomInputGUIs\WeekdayInputGUI
  *
  * @author  studer + raimann ag - Team Custom 1 <support-custom1@studer-raimann.ch>
  * @author  Theodor Truffer <tt@studer-raimann.ch>

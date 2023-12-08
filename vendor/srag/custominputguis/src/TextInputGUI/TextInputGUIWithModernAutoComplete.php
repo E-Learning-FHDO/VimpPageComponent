@@ -1,15 +1,15 @@
 <?php
 
-namespace srag\CustomInputGUIs\VimpPageComponent\TextInputGUI;
+namespace srag\CustomInputGUIs\TextInputGUI;
 
 use iljQueryUtil;
 use ilUtil;
-use srag\CustomInputGUIs\VimpPageComponent\Template\Template;
+use srag\CustomInputGUIs\Template\Template;
 
 /**
  * Class TextInputGUIWithModernAutoComplete
  *
- * @package srag\CustomInputGUIs\VimpPageComponent\TextInputGUI
+ * @package srag\CustomInputGUIs\TextInputGUI
  *
  * @author  studer + raimann ag - Team Custom 1 <support-custom1@studer-raimann.ch>
  */

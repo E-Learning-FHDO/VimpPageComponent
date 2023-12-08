@@ -1,6 +1,6 @@
 <?php
 
-namespace srag\DIC\VimpPageComponent\DIC\Implementation;
+namespace srag\DIC\DIC\Implementation;
 
 use Collator;
 use ilAccessHandler;
@@ -65,13 +65,13 @@ use ilToolbarGUI;
 use ilTree;
 use ilUIService;
 use Session;
-use srag\DIC\VimpPageComponent\DIC\AbstractDIC;
-use srag\DIC\VimpPageComponent\Exception\DICException;
+use srag\DIC\DIC\AbstractDIC;
+use srag\DIC\Exception\DICException;
 
 /**
  * Class ILIAS54DIC
  *
- * @package srag\DIC\VimpPageComponent\DIC\Implementation
+ * @package srag\DIC\DIC\Implementation
  *
  * @author  studer + raimann ag - Team Custom 1 <support-custom1@studer-raimann.ch>
  */

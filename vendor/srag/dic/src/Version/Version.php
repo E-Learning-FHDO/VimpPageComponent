@@ -1,11 +1,11 @@
 <?php
 
-namespace srag\DIC\VimpPageComponent\Version;
+namespace srag\DIC\Version;
 
 /**
  * Class Version
  *
- * @package srag\DIC\VimpPageComponent\Version
+ * @package srag\DIC\Version
  *
  * @author  studer + raimann ag - Team Custom 1 <support-custom1@studer-raimann.ch>
  */

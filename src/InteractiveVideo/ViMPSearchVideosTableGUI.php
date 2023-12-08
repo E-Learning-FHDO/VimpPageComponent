@@ -45,7 +45,7 @@ class ViMPSearchVideosTableGUI extends vpcoSearchVideosTableGUI
      * @param $a_set
      * @return string
      */
-    protected function getAddButton($a_set)
+    protected function getAddButton($a_set): string
     {
         $button = ilLinkButton::getInstance();
         $button->setCaption('add');

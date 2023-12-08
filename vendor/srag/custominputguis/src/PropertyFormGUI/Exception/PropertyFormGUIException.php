@@ -1,13 +1,13 @@
 <?php
 
-namespace srag\CustomInputGUIs\VimpPageComponent\PropertyFormGUI\Exception;
+namespace srag\CustomInputGUIs\PropertyFormGUI\Exception;
 
 use ilFormException;
 
 /**
  * Class PropertyFormGUIException
  *
- * @package srag\CustomInputGUIs\VimpPageComponent\PropertyFormGUI\Exception
+ * @package srag\CustomInputGUIs\PropertyFormGUI\Exception
  *
  * @author  studer + raimann ag - Team Custom 1 <support-custom1@studer-raimann.ch>
  *

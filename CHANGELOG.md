@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.5.1]
+- ILIAS 8 support
+- Remove ILIAS 7 support
+
 ## [1.5.0]
 - compatability with plugin version 1.6.0
 

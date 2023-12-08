@@ -27,7 +27,7 @@
   },
   "autoload": {
     "psr-4": {
-      "srag\\ActiveRecordConfig\\VimpPageComponent\\": "src/"
+      "srag\\ActiveRecordConfig\\": "src/"
     }
   },
   "config": {
