@@ -55,7 +55,7 @@ class vpcoOwnVideosTableGUI extends xvmpOwnVideosTableGUI {
 		$base_link = $this->ctrl->getLinkTargetByClass(array(ilObjPluginDispatchGUI::class, ilObjViMPGUI::class, xvmpOwnVideosGUI::class),'', '', true);
 		$this->tpl_global->addOnLoadCode('VimpContent.ajax_base_url = "'.$base_link.'";');
 
-		$this->pl = new ilVimpPageComponentPlugin($this->db, $DIC["component.repository"], "vpco");
+		$this->pl = new ilVimpPageComponentPlugin($this->db, $DIC["component.repository"], ilVimpPageComponentPlugin::PLUGIN_ID);
 		$this->vimp_pl = ilViMPPlugin::getInstance();
 		$this->setRowTemplate($this->pl->getDirectory() . '/templates/' . static::ROW_TEMPLATE);
 

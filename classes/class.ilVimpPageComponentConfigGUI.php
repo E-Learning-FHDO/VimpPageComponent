@@ -4,9 +4,6 @@ declare(strict_types=1);
 
 require_once __DIR__ . "/../vendor/autoload.php";
 
-use srag\Plugins\VimpPageComponent\Config\ConfigFormGUI;
-
-
 /**
  * Class ilVimpPageComponentConfigGUI
  * @ilCtrl_IsCalledBy ilVimpPageComponentConfigGUI: ilObjComponentSettingsGUI
@@ -17,11 +14,12 @@ use srag\Plugins\VimpPageComponent\Config\ConfigFormGUI;
 class ilVimpPageComponentConfigGUI extends ilPluginConfigGUI
 {
     const PLUGIN_CLASS_NAME = ilVimpPageComponentPlugin::class;
+
     const CMD_CONFIGURE = "configure";
     const CMD_UPDATE_CONFIGURE = "updateConfigure";
     const LANG_MODULE = "config";
     const TAB_CONFIGURATION = "configuration";
-    private ilViMPPlugin $pl;
+    private ilVimpPageComponentPlugin $pl;
     /**
      * @var \ILIAS\DI\Container|mixed
      */
@@ -39,7 +37,7 @@ class ilVimpPageComponentConfigGUI extends ilPluginConfigGUI
     {
         global $DIC;
         $this->dic = $DIC;
-        $this->pl = ilViMPPlugin::getInstance();
+        $this->pl = ilVimpPageComponentPlugin::getInstance();
         $this->tpl = $DIC['tpl'];
     }
 
@@ -78,19 +76,30 @@ class ilVimpPageComponentConfigGUI extends ilPluginConfigGUI
      */
     protected function setTabs(): void
     {
-        $this->dic->tabs()->addTab(self::TAB_CONFIGURATION, $this->pl->txt("configuration"), $this->dic->ctrl()
+        $this->dic->tabs()->addTab(self::TAB_CONFIGURATION, $this->pl->txt("config_configuration"), $this->dic->ctrl()
             ->getLinkTargetByClass(self::class, self::CMD_CONFIGURE));
-
-        //$this->dic->locator()->addItem(ilVimpPageComponentPlugin::PLUGIN_NAME, $this->dic->ctrl()->getLinkTarget($this, self::CMD_CONFIGURE));
     }
 
 
     /**
-     * @return ConfigFormGUI
+     * @return ilPropertyFormGUI
      */
-    protected function getConfigForm() : ConfigFormGUI
+    protected function getConfigForm() : ilPropertyFormGUI
     {
-        return new ConfigFormGUI($this);
+        $this->dic->tabs()->activateTab(self::TAB_CONFIGURATION);
+        $confForm = new ilPropertyFormGUI();
+        $confForm->setFormAction($this->dic->ctrl()->getFormAction($this));
+        $input = new ilNumberInputGUI($this->pl->txt('config_default_height'), "default_height");
+        $input->setInfo($this->pl->txt('config_default_height_info'));
+        $confForm->addItem($input);
+
+        $input = new ilNumberInputGUI($this->pl->txt('config_default_width'), "default_width");
+        $input->setInfo($this->pl->txt('config_default_width_info'));
+        $confForm->addItem($input);
+        $confForm->addCommandButton(self::CMD_UPDATE_CONFIGURE, $this->pl->txt('config_save'));
+        $this->tpl->setContent($confForm->getHTML());
+
+        return $confForm;
     }
 
 
@@ -99,15 +108,12 @@ class ilVimpPageComponentConfigGUI extends ilPluginConfigGUI
      */
     protected function configure(): void
     {
-        $this->dic->tabs()->activateTab(self::TAB_CONFIGURATION);
-
-        $confForm = new ilPropertyFormGUI();
-        // Token Cache TTL
-        $input = new ilNumberInputGUI("", "");
-        $input->setInfo("_info");
-        $confForm->addItem($input);
-
-        $this->tpl->setContent($confForm->getHTML());
+        $form = $this->getConfigForm();
+        $values = array();
+        $values["default_height"] = $this->pl::getValue("default_height");
+        $values["default_width"] = $this->pl::getValue("default_width");
+        $form->setValuesByArray($values);
+        $this->tpl->setContent($form->getHTML());
     }
 
 
@@ -120,14 +126,16 @@ class ilVimpPageComponentConfigGUI extends ilPluginConfigGUI
         $this->dic->tabs()->activateTab(self::TAB_CONFIGURATION);
 
         $form = $this->getConfigForm();
-
-        if (!$form->storeForm()) {
-            $this->tpl->setContent($form->getHTML());
-            return;
+        if ($form->checkInput()) {
+            $this->pl::setValue("default_height", $form->getInput("default_height"), "integer");
+            $this->pl::setValue("default_width", $form->getInput("default_width"), "integer");
+            $this->dic->ui()->mainTemplate()->setOnScreenMessage('success', $this->pl->txt('config_configuration_saved'), true);
         }
 
-
-        $this->dic->ui()->mainTemplate()->setOnScreenMessage('success', $this->pl->txt('configuration_saved'));
         $this->dic->ctrl()->redirect($this,self::CMD_CONFIGURE);
+
+        $form->setValuesByPost();
+        $this->tpl->setContent($form->getHTML());
+
     }
 }

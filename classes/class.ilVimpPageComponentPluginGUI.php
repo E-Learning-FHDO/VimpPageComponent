@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 use ILIAS\DI\Container;
 use srag\Plugins\ViMP\UIComponents\Player\VideoPlayer;
-use srag\Plugins\VimpPageComponent\Config\Config;
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
@@ -64,7 +63,7 @@ class ilVimpPageComponentPluginGUI extends ilPageComponentPluginGUI {
 		$this->tpl = $tpl;
 		$this->tabs = $ilTabs;
 		$this->lng = $lng;
-		$this->pl = new ilVimpPageComponentPlugin($this->db, $DIC["component.repository"], "vpco");
+		$this->pl = new ilVimpPageComponentPlugin($this->db, $DIC["component.repository"], ilVimpPageComponentPlugin::PLUGIN_ID);
 	}
 
 
@@ -390,10 +389,8 @@ class ilVimpPageComponentPluginGUI extends ilPageComponentPluginGUI {
 
         $video_properties = array(
 			"mid" => $mid,
-			//"width" => Config::getField(Config::KEY_DEFAULT_WIDTH) ?: (isset($video->getProperties()['width']) ? $video->getProperties()['width'] : 268),
-			//"height" => Config::getField(Config::KEY_DEFAULT_HEIGHT) ?: (isset($video->getProperties()['height']) ? $video->getProperties()['height'] : 150)
-            "width" => ($video->getProperties()['width'] ?? 268),
-            "height" => ($video->getProperties()['height'] ?? 150)
+			"width" => $this->pl::getValue("default_width") ?: ($video->getProperties()['width'] ?? 268),
+			"height" => $this->pl::getValue("default_height") ?: ($video->getProperties()['height'] ?? 150)
 		);
 
 		if ($this->createElement($video_properties)) {
