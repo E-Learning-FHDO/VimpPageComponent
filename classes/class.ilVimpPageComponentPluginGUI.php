@@ -509,6 +509,9 @@ class ilVimpPageComponentPluginGUI extends ilPageComponentPluginGUI {
     {
 		try {
 			$video = xvmpMedium::find($a_properties['mid']);
+            if ($video instanceof xvmpDeletedMedium) {
+                throw new xvmpException(xvmpException::API_CALL_STATUS_404,'Video not found');
+            }
 
 		VideoPlayer::loadVideoJSAndCSS(false);
 		$video_player = new VideoPlayer($video, xvmpConf::getConfig(xvmpConf::F_EMBED_PLAYER) || xvmpMedium::isVimeoOrYoutube($video));
